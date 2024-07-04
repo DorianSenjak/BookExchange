@@ -49,9 +49,10 @@ namespace WebApplication1.Controllers
             }
             // Create proper cookie with claims
             var claims = new List<Claim>() {
-      new Claim(ClaimTypes.Name, loginVm.Username),
-      new Claim(ClaimTypes.Role, "User")
-  };
+                new Claim(ClaimTypes.Name, loginVm.Username),
+                new Claim(ClaimTypes.Role, "User"),
+                new Claim("UserId",existingUser.Idaccount.ToString())
+            };
 
             var claimsIdentity = new ClaimsIdentity(
                 claims,

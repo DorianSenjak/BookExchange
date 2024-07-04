@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Context;
 
@@ -230,4 +231,6 @@ public partial class MyDbContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+public DbSet<WebApplication1.ViewModels.ReviewVM> ReviewVM { get; set; } = default!;
 }
